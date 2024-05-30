@@ -1,0 +1,14 @@
+h:\Usuario\Documentos\visual\C#\Filtro\bin\Debug\net8.0\Filtro.exe
+h:\Usuario\Documentos\visual\C#\Filtro\bin\Debug\net8.0\Filtro.deps.json
+h:\Usuario\Documentos\visual\C#\Filtro\bin\Debug\net8.0\Filtro.runtimeconfig.json
+h:\Usuario\Documentos\visual\C#\Filtro\bin\Debug\net8.0\Filtro.dll
+h:\Usuario\Documentos\visual\C#\Filtro\bin\Debug\net8.0\Filtro.pdb
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.GeneratedMSBuildEditorConfig.editorconfig
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.AssemblyInfoInputs.cache
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.AssemblyInfo.cs
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.csproj.CoreCompileInputs.cache
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.dll
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\refint\Filtro.dll
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.pdb
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.genruntimeconfig.cache
+h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\ref\Filtro.dll
