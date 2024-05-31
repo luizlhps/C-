@@ -25,9 +25,10 @@ class Program
             "Lei 14113",
             "Lei 13.122.22",
             "Lei 13.122.2",
-            "Lei 13.122.222"
+            "Lei 13.122.222",
+            "Lei 10000/60",
+            "13.21/22"
         };
-
 
         foreach (var testCase in testCases)
         {
@@ -66,7 +67,6 @@ class Program
 
         return inputDecimalTransformed;
         }
-
 
     return input;
     }

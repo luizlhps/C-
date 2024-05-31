@@ -12,3 +12,4 @@ h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\refint\Filtro.dll
 h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.pdb
 h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.genruntimeconfig.cache
 h:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\ref\Filtro.dll
+H:\Usuario\Documentos\visual\C#\Filtro\obj\Debug\net8.0\Filtro.sourcelink.json
