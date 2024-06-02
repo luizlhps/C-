@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj": {}
+    "h:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj": {}
   },
   "projects": {
-    "H:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj": {
+    "h:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj",
+        "projectUniqueName": "h:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj",
         "projectName": "Filtro",
-        "projectPath": "H:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj",
+        "projectPath": "h:\\Usuario\\Documentos\\visual\\C#\\Filtro\\Filtro.csproj",
         "packagesPath": "C:\\Users\\luizh\\.nuget\\packages\\",
-        "outputPath": "H:\\Usuario\\Documentos\\visual\\C#\\Filtro\\obj\\",
+        "outputPath": "h:\\Usuario\\Documentos\\visual\\C#\\Filtro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\luizh\\AppData\\Roaming\\NuGet\\NuGet.Config"

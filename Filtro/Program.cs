@@ -8,6 +8,9 @@
 
 //(\d*)([.])(\d*)([.]\d*)*\b
 
+
+//(?<![^\s"º°])(\d{1,2}\.\d{3})(?:\/(?:\d{2}|\d{4}))?\b(?![^\s""])
+
 using System.Text.RegularExpressions;
 
 class Program
@@ -15,6 +18,7 @@ class Program
     static void Main()
     {
         string[] testCases = {
+            "Lei Lei 14123/2000 14.113/2000,",
             "Lei 14.113",
             "Lei 100.100",
             "Lei 1.333",
@@ -27,7 +31,8 @@ class Program
             "Lei 13.122.2",
             "Lei 13.122.222",
             "Lei 10000/60",
-            "13.21/22"
+            "nº13.21/22",
+            "nº13.221/22"
         };
 
         foreach (var testCase in testCases)
@@ -41,40 +46,62 @@ class Program
     {
 
         // Define regex pattern
-        string pattern = @"(\d*)([.])(\d*)([.]\d*)*\b";
+        string patternWithDot = @"(?<![^\s""º°])(\d{1,2}\.\d{3})(?:\/(?:\d{2}|\d{4}))?\b(?![^\s"",])";
+        string patternWithoutDot = @"(?<![^\s""º°])(\d{4}|\d{5})(?:\/(?:\d{2}|\d{4}))?\b(?![^\s"",])";
 
-        var isMatch = Regex.Match(input, pattern);
-        
-        if(isMatch.Success){
-            string test = isMatch.Groups[0].Value;
-            string removedDot = input.Replace(".", "");
+        var matchWithDot = Regex.Match(input, patternWithDot);
+        var matchWithoutDot = Regex.Match(input, patternWithoutDot);
 
-            string inputDecimalTransformed = DecimalSeparator(removedDot);
-            bool inputEqualsDot = inputDecimalTransformed.Equals(input);
+        return DetermineProcessingOrder(matchWithoutDot, matchWithDot, input);
 
-            // it input not valid continue search
-            if(!inputEqualsDot) return input;
-
-           return removedDot;
-
-        }
-
-        string IdentifyNumbers = @"\b([5-9]|\d{4,})\b";
-        var haveMoreAtFourDigits = Regex.Match(input, IdentifyNumbers);
-
-        if(haveMoreAtFourDigits.Success) {
-        string inputDecimalTransformed = DecimalSeparator(input);
-
-        return inputDecimalTransformed;
-        }
-
-    return input;
     }
 
+    static string DetermineProcessingOrder(Match matchWithoutDot, Match matchWithDot, string input)
+    {
+        bool hasMatchWithoutDot = matchWithoutDot.Success;
+        bool hasMatchWithDot = matchWithDot.Success;
 
-    static string DecimalSeparator(string input){
+        if (hasMatchWithoutDot && hasMatchWithDot)
+        {
+            var firstMatchWithDot = matchWithDot.Groups[0].Index;
+            var firstMatchWithoutDot = matchWithoutDot.Groups[0].Index;
+
+
+            if (firstMatchWithoutDot > firstMatchWithDot) return FormatLawWithoutSeparator(matchWithDot, input);
+            return FormatLawWithSeparator(matchWithoutDot, input);
+        }
+        else if (!hasMatchWithoutDot && hasMatchWithDot)
+        {
+            return FormatLawWithoutSeparator(matchWithDot, input);
+
+        }
+        else if (hasMatchWithoutDot && !hasMatchWithDot)
+        {
+            return FormatLawWithSeparator(matchWithoutDot, input);
+        }
+
+        return input;
+    }
+
+    static string FormatLawWithoutSeparator(Match matchLawWithDot, string input)
+    {
+        string lawWithDot = matchLawWithDot.Groups[1].Value;
+        string removedDot = lawWithDot.Replace(".", "");
+
+        return input.Replace(lawWithDot, removedDot);
+    }
+    static string FormatLawWithSeparator(Match matchLawWithoutDot, string input)
+    {
+
+        string lawWithoutDot = matchLawWithoutDot.Groups[1].Value;
+        string inputDecimalTransformed = AddDecimalSeparator(lawWithoutDot);
+        return input.Replace(lawWithoutDot, inputDecimalTransformed);
+
+
+    }
+    static string AddDecimalSeparator(string input)
+    {
         var formatoCorreto = Regex.Replace(input, @"(?<=\d)(?=(\d{3})+(?!\d))", ".");
-
         return formatoCorreto;
 
     }
